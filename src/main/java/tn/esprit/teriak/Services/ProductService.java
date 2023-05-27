@@ -44,6 +44,7 @@ public class ProductService implements IProductInterface {
         existingProduct.setQuantiteTotale(product.getQuantiteTotale());
         existingProduct.setMontantApresRemise(product.getMontantApresRemise());
         existingProduct.setDisponible(product.isDisponible());
+        existingProduct.setProductName(product.getProductName());
 
         return productRepository.save(existingProduct);
     }

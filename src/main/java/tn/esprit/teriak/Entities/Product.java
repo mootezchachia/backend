@@ -12,9 +12,11 @@ public class Product {
     private String designation;
     private int uniteParCaisse;
     private double prix;
+    private String productName ;
+    private String description;
     private double remise;
     private int carton;
-    private int vrac;
+    private String vrac;
     private int quantiteTotale;
     private double montantApresRemise;
     private boolean disponible;
@@ -25,6 +27,14 @@ public class Product {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getCodePCT() {
@@ -75,12 +85,12 @@ public class Product {
         this.carton = carton;
     }
 
-    public int getVrac() {
+    public String getVrac() {
         return vrac;
     }
 
-    public void setVrac(int vrac) {
-        this.vrac = vrac;
+    public void setVrac(String vrac) {
+        this.vrac = String.valueOf(vrac);
     }
 
     public int getQuantiteTotale() {
@@ -105,5 +115,13 @@ public class Product {
 
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 }
