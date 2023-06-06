@@ -1,9 +1,17 @@
 package tn.esprit.teriak.Entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "products")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +21,7 @@ public class Product {
     private int uniteParCaisse;
     private double prix;
     private String productName ;
-    private String description;
+    private String avecvrac;
     private double remise;
     private int carton;
     private String vrac;
@@ -29,12 +37,12 @@ public class Product {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public String getAvecvrac() {
+        return avecvrac;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAvecvrac(String avecvrac) {
+        this.avecvrac = avecvrac;
     }
 
     public String getCodePCT() {

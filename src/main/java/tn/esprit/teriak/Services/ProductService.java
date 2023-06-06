@@ -23,6 +23,10 @@ public class ProductService implements IProductInterface {
         return productRepository.findById(id).orElse(null);
     }
 
+    public Product getProductByCodePCT(String codePCT) {
+        return productRepository.findByCodePCT(codePCT);
+    }
+
     public Product createProduct(Product product) {
         return productRepository.save(product);
     }

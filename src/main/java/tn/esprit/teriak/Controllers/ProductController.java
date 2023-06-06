@@ -33,6 +33,15 @@ public class ProductController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping("/{codePCT}")
+    public ResponseEntity<Product> getProductByCodePCT(@PathVariable String codePCT) {
+        Product product = productService.getProductByCodePCT(codePCT);
+        if (product != null) {
+            return new ResponseEntity<>(product, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
     @PostMapping("add")
     public ResponseEntity<Product> createProduct(@RequestBody Product product) {
         Product createdProduct = productService.createProduct(product);
